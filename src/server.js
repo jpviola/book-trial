@@ -48,7 +48,7 @@ app.use((req, res) => {
 app.use(errorHandler);
 
 // Start server (only for local development)
-if (process.env.NODE_ENV !== 'production') {
+if (process.env.VERCEL !== "1") {
   app.listen(config.port, () => {
     console.log(`✅ Server running on http://localhost:${config.port}`);
     console.log(`📧 Supabase URL: ${config.supabaseUrl}`);
